@@ -20,7 +20,7 @@ A professional internal dashboard designed for recruiters to efficiently review,
 ## 📸 Screenshots
 
 ### 1. Main Dashboard (Desktop)
-![Dashboard](./screenshots/dashboard.png)
+![Dashboard](./screenshots/desktop.png)
 
 ### 2. Candidate Detail Panel
 ![Detail Panel](./screenshots/detail-panel.png)
