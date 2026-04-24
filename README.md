@@ -3,10 +3,9 @@
 A professional internal dashboard designed for recruiters to efficiently review, evaluate, and shortlist applicants from a pool of 1000+ candidates.
 
 ## 🔗 Project Links
-- **Live Deployment:** 
-- **Video Demonstration:** 
-- **GitHub Repository:** 
-
+- **Live Deployment:** https://candidate-review-dashboard-puce.vercel.app/
+- **Video Demonstration:** https://drive.google.com/file/d/11XNod_KtKQdyu3TIUJouairSv_GpDzMy/view?usp=drivesdk
+- **GitHub Repository:** https://github.com/PrernaSingh-90/Candidate-Review-Dashboard
 
 ## 🚀 Key Features
 - **Candidate List Panel:** High-performance table/card layout with 50+ dummy candidates.
