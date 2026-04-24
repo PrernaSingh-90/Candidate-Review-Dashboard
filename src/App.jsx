@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react'; 
 import StatsHeader from './components/Dashboard/StatsHeader';
 import FiltersBar from './components/Dashboard/FiltersBar';
 import CandidateTable from './components/Dashboard/CandidateTable';
@@ -7,19 +7,25 @@ import ComparisonModal from './components/Comparison/ComparisonModal';
 import mockData from './data/candidates.json'; 
 
 const App = () => {
-  const [candidates, setCandidates] = useState(mockData);
+  const [candidates, setCandidates] = useState(() => {
+    const saved = localStorage.getItem('candidates-dashboard-v4');
+    return saved ? JSON.parse(saved) : mockData;
+  });
+
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCandidate, setSelectedCandidate] = useState(null);
-  
   
   const [statusFilter, setStatusFilter] = useState("All");
   const [scoreFilter, setScoreFilter] = useState("All");
   const [videoScoreFilter, setVideoScoreFilter] = useState("All"); 
   const [sortBy, setSortBy] = useState("none");
 
-  
   const [compareList, setCompareList] = useState([]);
   const [isCompareOpen, setIsCompareOpen] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem('candidates-dashboard-v4', JSON.stringify(candidates));
+  }, [candidates]);
 
   const updateCandidateScore = (id, field, newValue) => {
     const updated = candidates.map(c => 
@@ -44,13 +50,11 @@ const App = () => {
       const matchesName = c.name.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesStatus = statusFilter === "All" || c.status === statusFilter;
       
-     
       let matchesScore = true;
       if (scoreFilter === "80+") matchesScore = c.assignment_score >= 80;
       else if (scoreFilter === "50-80") matchesScore = c.assignment_score >= 50 && c.assignment_score < 80;
       else if (scoreFilter === "<50") matchesScore = c.assignment_score < 50;
 
-     
       let matchesVideo = true;
       if (videoScoreFilter === "80+") matchesVideo = c.video_score >= 80;
       else if (videoScoreFilter === "50-80") matchesVideo = c.video_score >= 50 && c.video_score < 80;
