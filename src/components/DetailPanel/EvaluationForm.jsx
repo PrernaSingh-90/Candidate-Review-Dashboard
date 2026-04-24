@@ -25,8 +25,6 @@ const EvaluationForm = ({ candidate, onUpdateScore }) => {
         <h3 className="text-[11px] font-black text-slate-500 uppercase tracking-[0.25em] border-b border-slate-200 pb-3">
           Assignment Evaluation Panel
         </h3>
-        
-        {/* Poori 6 Fields ki List jo Assignment mein mangi gayi hai */}
         <div className="grid grid-cols-1 gap-6">
           <EvaluationSlider 
             label="UI Quality" icon="🎨" value={candidate.ui_quality} 
@@ -55,7 +53,6 @@ const EvaluationForm = ({ candidate, onUpdateScore }) => {
         </div>
       </div>
 
-      {/* Evaluation Notes Section */}
       <div className="space-y-3">
         <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Reviewer Notes</label>
         <textarea 

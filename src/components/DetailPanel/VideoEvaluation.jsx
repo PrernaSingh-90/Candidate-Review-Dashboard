@@ -45,7 +45,7 @@ const VideoEvaluation = ({ candidate, onUpdateScore }) => {
         </div>
       </div>
 
-      {/* Optional Timestamp Notes as per Assignment */}
+   
       <div className="space-y-3">
         <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-2">
           <Clock size={12} /> Timestamp Notes (Optional)
